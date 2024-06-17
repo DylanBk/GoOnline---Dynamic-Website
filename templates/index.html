@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoOnline 17/06/2024 - Flask</title>
+</head>
+<body>
+
+    <header>
+        <h1>T-Level Software Development</h1>
+        <nav>
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('tutors') }}">Tutors</a>
+            <a href="{{ url_for('lessons', lesson='placeholder') }}">Lessons</a>
+        </nav>
+    </header>
+
+    <main>
+        <div id="wrapper">
+            <div class="container container-plain">
+                <h3>What is a T-level?</h3>
+                <div class="container-content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere ipsam fuga exercitationem harum dolorum! Alias impedit saepe corrupti consectetur incidunt ullam perspiciatis adipisci totam, atque magnam, dolorem dolores, ea quaerat.</p>
+                    <img src="{{ url_for('static', filename='/images/person-studying.jpeg') }}" alt="A woman studying">
+            </div>
+            <div class="container container-primary">
+                <h3>What is this course about?</h3>
+                <div class="container-content">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut inventore blanditiis ducimus est accusantium iure deleniti odit. Repellat assumenda debitis exercitationem similique labore ex numquam facere, deserunt placeat, ratione magnam.</p>
+                    <img src="{{ url_for('static', filename='/images/programming-example.jpeg') }}" alt="An image of some code">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer></footer>
+    
+</body>
+</html>

@@ -1,0 +1,96 @@
+:root {
+    --bg: #E8E8E8;
+    --primary: #2F27CE;
+    --secondary: #8D8DE2;
+    --accent: #F44EF1;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background-color: var(--bg);
+}
+
+header {
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: var(--primary);
+    box-shadow: 0 0 10px black;
+}
+
+nav {
+
+}
+nav a {
+    padding: 1rem;
+    border: solid 1px var(--bg); /* hides border without moving elements when not hovered */
+    color: black;
+}
+nav a:hover {
+    border: solid 1px black;
+}
+
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem;
+}
+
+.container {
+    /* height: max-content; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+
+.container-content {
+    display: flex;
+    flex-direction: row;
+}
+
+.container h3 {
+    padding: 1rem;
+}
+.container p {
+    padding: 1rem;
+}
+
+.container-content img {
+    height: 250px;
+    margin: 1rem;
+    
+}
+
+.container-plain {
+    background: var(--bg);
+    color: black;
+}
+
+.container-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.container-secondary {
+    background: var(--secondary);
+    color: black;
+}

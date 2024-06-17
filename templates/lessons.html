@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{{ url_for('static', filename='/js/script.js') }}"></script>
+    <title>GoOnline 17/06/2024 - Flask</title>
+</head>
+<body>
+
+    <header>
+        <h1>T-Level Software Development</h1>
+        <nav>
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('tutors') }}">Tutors</a>
+            <a href="{{ url_for('lessons', lesson='placeholder') }}">Lessons</a>
+        </nav>
+    </header>
+
+    <main>
+        <div id="wrapper">
+
+            <select name="lesson-select" id="lesson-select" onchange="load_lesson(this.value)"> <!-- calls lessons(lesson) py function and passes selected value into params-->
+                <option value="">-Select a Lesson-</option>
+                {% for lesson in lessons %}
+                    <option value="{{ lesson }}">{{ lesson }}</option>
+                {% endfor %}
+            </select>
+
+            <!-- renders different lessons based on value of lesson, default is "placeholder" -->
+            <div class="container"> 
+                {% if lesson == "placeholder" %}
+                    <h2>Select a lesson to view information about it</h2>
+                {% else %}
+                    <h3>{{ lesson }}</h3>
+                    {% if lesson == "Programming Concepts" %}
+                        <div class="container-content container-plain">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam ullam ipsam nam provident illum natus voluptatibus molestias repudiandae excepturi animi, saepe eum quibusdam blanditiis? Laborum a officiis architecto atque numquam!</p>
+                        </div>
+                    {% endif %}
+                    {% if lesson == "Design and Development" %}
+                        <div class="container-content container-plain">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint possimus hic laborum quam ab! Unde porro aut voluptatum omnis impedit mollitia voluptatibus magnam maiores et natus! Eaque facilis ad enim.</p>
+                        </div>
+                    {% endif %}
+                    {% if lesson == "Data Applications" %}
+                        <div class="container-content container-plain">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore rerum blanditiis, ipsum, facere saepe ex unde repellendus perspiciatis eum obcaecati numquam voluptatum et aliquam nobis earum illo a quidem sapiente.</p>
+                        </div>
+                    {% endif %}
+                    {% if lesson == "Frameworks" %}
+                        <div class="container-content container-plain">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore rerum blanditiis, ipsum, facere saepe ex unde repellendus perspiciatis eum obcaecati numquam voluptatum et aliquam nobis earum illo a quidem sapiente.</p>
+                        </div>
+                    {% endif %}
+                    {% if lesson == "Network Infrastructure and Security" %}
+                        <div class="container-content container-plain">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore rerum blanditiis, ipsum, facere saepe ex unde repellendus perspiciatis eum obcaecati numquam voluptatum et aliquam nobis earum illo a quidem sapiente.</p>
+                        </div>
+                    {% endif %}
+                    {% if lesson == "Industry Concepts" %}
+                        <div class="container-content container-plain">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore rerum blanditiis, ipsum, facere saepe ex unde repellendus perspiciatis eum obcaecati numquam voluptatum et aliquam nobis earum illo a quidem sapiente.</p>
+                        </div>
+                    {% endif %}
+                    {% if lesson == "Industry Skills" %}
+                    <div class="container-content container-plain">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore rerum blanditiis, ipsum, facere saepe ex unde repellendus perspiciatis eum obcaecati numquam voluptatum et aliquam nobis earum illo a quidem sapiente.</p>
+                    </div>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+    </main>
+
+    <footer></footer>
+    
+</body>
+</html>
