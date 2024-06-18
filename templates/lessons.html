@@ -14,7 +14,7 @@
         <nav>
             <a href="{{ url_for('home') }}">Home</a>
             <a href="{{ url_for('tutors') }}">Tutors</a>
-            <a href="{{ url_for('lessons', lesson='placeholder') }}">Lessons</a>
+            <a href="{{ url_for('lessons', lesson='select-a-lesson') }}">Lessons</a>
         </nav>
     </header>
 
@@ -28,9 +28,9 @@
                 {% endfor %}
             </select>
 
-            <!-- renders different lessons based on value of lesson, default is "placeholder" -->
+            <!-- renders different lessons based on value of lesson, default is "select-a-lesson" -->
             <div class="container"> 
-                {% if lesson == "placeholder" %}
+                {% if lesson == "select-a-lesson" %}
                     <h2>Select a lesson to view information about it</h2>
                 {% else %}
                     <h3>{{ lesson }}</h3>
